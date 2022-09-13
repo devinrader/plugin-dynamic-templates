@@ -1,11 +1,11 @@
-//const { getPackageManager } = require('pkg-install');
+// const { getPackageManager } = require('pkg-install');
 const chalk = require('chalk');
 const wrap = require('wrap-ansi');
 
 const getWindowSize = require('./window-size');
 
 async function successMessage(config) {
-  //const packageManager = await getPackageManager({ cwd: process.cwd() });
+  // const packageManager = await getPackageManager({ cwd: process.cwd() });
   return wrap(
     chalk`{green Success!}
 
@@ -13,13 +13,12 @@ Created {bold ${config.name}} at {bold ${config.path}}`,
     getWindowSize().width - 8,
     {
       trim: false,
-      hard: true,
-    },
+      hard: true
+    }
   );
 }
 
 module.exports = successMessage;
-
 
 /*
 Inside that directory, you can run the following command:
@@ -31,4 +30,4 @@ Inside that directory, you can run the following command:
 Get started by running:
 
 {blue cd ${config.name}}
-{blue ${packageManager} start}*/
+{blue ${packageManager} start} */

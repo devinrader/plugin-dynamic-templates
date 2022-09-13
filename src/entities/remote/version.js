@@ -2,45 +2,29 @@ const client = require('@sendgrid/client');
 client.setApiKey(process.env.SENDGRID_API_KEY);
 
 module.exports = class TemplateVersion {
-  static async fetch(template_id, version_id) {
+  static async fetch(templateId, versionId) {
     const request = {
-      url: `/v3/templates/${template_id}/versions/${version_id}`,
-      method: 'GET',
-      }
-      return await sendGridClient.request(request);
+      url: `/v3/templates/${templateId}/versions/${versionId}`,
+      method: 'GET'
+    };
+    return client.request(request);
   }
 
-  static async create(template_id, data) {
+  static async create(templateId, data) {
     const req = {
-      url: `/v3/templates/${template_id}/versions`,
+      url: `/v3/templates/${templateId}/versions`,
       method: 'POST',
       body: data
-    }
-    try {
-      const response = await client.request(req);
-      return response[1];
-    } catch (error) {
-      console.error(error);
-      if (error.response) {
-        console.error(error.response.body);
-      }
-    }
+    };
+    return client.request(req);
   }
 
-  static async update(template_id, version_id, data) {
+  static async update(templateId, versionId, data) {
     const req = {
-      url: `/v3/templates/${template_id}/versions/${version_id}`,
+      url: `/v3/templates/${templateId}/versions/${versionId}`,
       method: 'PATCH',
       body: data
-    }
-    try {
-      const response = await client.request(req);
-      return response[1];
-    } catch (error) {
-      console.error(error);
-      if (error.response) {
-        console.error(error.response.body);
-      }
-    }
+    };
+    return client.request(req);
   }
-}
+};

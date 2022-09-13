@@ -1,6 +1,6 @@
-const { expect, test } = require('@twilio/cli-test');
-const { Config, ConfigData } = require('@twilio/cli-core').services.config;
-const DynamicTemplatesList = require('../../../src/entities/remote/template');
+// const { expect, test } = require('@twilio/cli-test');
+// const { Config, ConfigData } = require('@twilio/cli-core').services.config;
+// const DynamicTemplatesList = require('../../../src/entities/remote/template');
 
 /* eslint-disable camelcase */
 // const INFO_LOG = {
@@ -28,10 +28,10 @@ const DynamicTemplatesList = require('../../../src/entities/remote/template');
 // };
 /* eslint-enable camelcase */
 
-const testConfig = test
-  .stdout()
-  .twilioFakeProfile(ConfigData)
-  .twilioCliEnv(Config);
+// const testConfig = test
+//   .stdout()
+//   .twilioFakeProfile(ConfigData)
+//   .twilioCliEnv(Config);
 
 describe('dynamic-templates:list', () => {
   describe('list', () => {
@@ -67,5 +67,4 @@ describe('dynamic-templates:list', () => {
     //   .catch(/12345.*Some random error/)
     //   .it('prints errors');
   });
-
 });

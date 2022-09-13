@@ -10,7 +10,7 @@ function assertDoesntStartWithHyphen(name) {
 function assertDoesntEndWithHyphen(name) {
   return !name.endsWith('-');
 }
-  
+
 function assertNotLongerThan(name, chars = 32) {
   return name.length <= chars;
 }
@@ -37,7 +37,7 @@ function validateTemplateName(name) {
   }
   return {
     valid,
-    errors,
+    errors
   };
 }
 

@@ -8,18 +8,18 @@ const cliInfo = {
   }
 };
 
-function builder(cmd) {
-  cmd.positional('name', {
-    describe: 'Name of your template.',
-    type: 'string',
-  });
-  cmd.options(cliInfo.options);
-}
+// function builder(cmd) {
+//   cmd.positional('name', {
+//     describe: 'Name of your template.',
+//     type: 'string'
+//   });
+//   cmd.options(cliInfo.options);
+// }
 
 module.exports = {
-    command,
-    describe,
-    handler,
-    cliInfo,
-    builder
-  };
+  command,
+  describe,
+  handler,
+  cliInfo
+  // builder
+};
