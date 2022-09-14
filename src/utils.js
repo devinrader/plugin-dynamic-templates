@@ -1,10 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 
-// const camelCase = require('lodash.camelcase');
-// const { flags } = require('@oclif/command');
-
-// const { promisify } = require('util');
 const { uniqueNamesGenerator, adjectives, colors, animals } = require('unique-names-generator');
 
 async function tryFindUniqueName(fn, maxTries = 5) {
